@@ -186,7 +186,18 @@ object dmPost: TdmPost
     CachedUpdates = True
     Connection = frmPrincipal.FDConPG
     SQL.Strings = (
-      'SELECT * FROM pedidocompra'
+      'select '
+      
+        ' id ,status,datareg ,idusuario,dataalteracao,idusuarioalteracao,' +
+        'idsegmento,idcategoria,identificador,'
+      
+        ' idsupervisoraprovacao,dataaprovacaosupervisor,iddiretoriaaprova' +
+        'cao,dataaprovacaodiretoria,'
+      
+        ' datapedido,idsolicitante,cancelado,idmaquina,idservico,flagurge' +
+        'nte,'#39'1'#39' syncaws,'#39'1'#39' syncfaz,observacao,idcentrocusto,idproprieda' +
+        'de'
+      'from pedidocompra'
       'WHERE syncAws=0')
     Left = 676
     Top = 16
@@ -195,7 +206,31 @@ object dmPost: TdmPost
     CachedUpdates = True
     Connection = frmPrincipal.FDConPG
     SQL.Strings = (
-      'SELECT * FROM pedidocompraitems'
+      'select id ,'
+      #9'idpedido ,'
+      #9'iditem ,'
+      #9'tipo ,'
+      #9'observacao ,'
+      #9'status  ,'
+      #9'datareg ,'
+      #9'idusuario ,'
+      #9'dataalteracao ,'
+      #9'idusuarioalteracao ,'
+      #9'quantidade,'
+      #9'unidademedida ,'
+      #9'valorunidade,'
+      #9'valortotal ,'
+      #9'idorcamento ,'
+      #9'qtdrealizada ,'
+      #9'recebido,'
+      #9'observacaorecebimento ,'
+      #9'datarecebimento,'
+      #9'idusuariorecebimento ,'
+      #9#39'1'#39' syncaws,'
+      #9#39'1'#39' syncfaz,'
+      #9'idmarca,'
+      #9'original '
+      'from pedidocompraitems  '
       'WHERE syncAws=0')
     Left = 676
     Top = 79

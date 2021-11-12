@@ -335,7 +335,7 @@ object dmDB: TdmDB
     Connection = frmPrincipal.FDConPG
     SQL.Strings = (
       'SELECT * FROM pedidocompraitems')
-    Left = 379
+    Left = 363
     Top = 304
   end
 end

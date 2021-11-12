@@ -180,6 +180,13 @@ begin
    mlog.Lines.Add(dmPost.PostGenerico(dmPost.DetoperacaosafratalhaoprodutosTable));
    mlog.Lines.Add('Enviando Operação Safra Vazão');
    mlog.Lines.Add(dmPost.PostGenerico(dmPost.DetvazaooperacaoTable));
+
+   mlog.Lines.Add('Enviando Pedido de Compras');
+   mlog.Lines.Add(dmPost.PostGenerico(dmPost.PedidocompraTable));
+
+   mlog.Lines.Add('Enviando Pedido Compra Itens');
+   mlog.Lines.Add(dmPost.PostGenerico(dmPost.PedidocompraitemsTable));
+
    //Baixando
    TThread.Synchronize(nil, procedure
    begin

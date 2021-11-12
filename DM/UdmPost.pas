@@ -93,19 +93,24 @@ begin
    frmPrincipal.IdHTTP1.Request.CustomHeaders.Clear;
    frmPrincipal.IdHTTP1.Request.ContentType := 'application/json';
    frmPrincipal.IdHTTP1.Request.Accept      := 'application/json';
-   vReultHTTP := frmPrincipal.IdHTTP1.Post(url,JsonToSend);
-   if copy(vReultHTTP,0,4)='{"OK'then
-   begin
-     vReultHTTP := StringReplace(vReultHTTP,'{"OK":"','',[rfReplaceAll]);
-     vReultHTTP := StringReplace(vReultHTTP,'"}','',[rfReplaceAll]);
-     AlteraFlagSyngGenerico(
-      StringReplace(DataSet.Name,'Table','',[rfReplaceAll]),
-      vReultHTTP
-     );
-   Result:=StringReplace(DataSet.Name,'Table','',[rfReplaceAll])+' Ids Enviados:'+vReultHTTP;
-   end
-   else
-   Result     :=vReultHTTP;
+   try
+     vReultHTTP := frmPrincipal.IdHTTP1.Post(url,JsonToSend);
+     if copy(vReultHTTP,0,4)='{"OK'then
+     begin
+       vReultHTTP := StringReplace(vReultHTTP,'{"OK":"','',[rfReplaceAll]);
+       vReultHTTP := StringReplace(vReultHTTP,'"}','',[rfReplaceAll]);
+       AlteraFlagSyngGenerico(
+        StringReplace(DataSet.Name,'Table','',[rfReplaceAll]),
+        vReultHTTP
+       );
+     Result:=StringReplace(DataSet.Name,'Table','',[rfReplaceAll])+' Ids Enviados:'+vReultHTTP;
+     end
+     else
+     Result     :=vReultHTTP;
+   except
+    on E: Exception do
+     frmPrincipal.mlog.Lines.Add('Erro ao Enviar dados:'+DataSet.Name+' : '+E.Message);
+   end;
  end
  else
   Result     := StringReplace(DataSet.Name,'Table','',[rfReplaceAll])+': Sem Dados para Envias';
