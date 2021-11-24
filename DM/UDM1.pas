@@ -205,12 +205,12 @@ begin
    if vQry.FieldByName('agricultura').AsInteger=1 then
    begin
     Result := 'Agricultura';
-    host   := '127.0.0.1';
+    host   := '54.198.102.100';
     Porta  := '8092'
    end
    else
    begin
-    host   := '127.0.0.1';
+    host   := '54.198.102.100';
     Porta  := '8001';
     Result := 'Pecuaria'
    end;

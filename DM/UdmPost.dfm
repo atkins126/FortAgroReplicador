@@ -6,7 +6,14 @@ object dmPost: TdmPost
     CachedUpdates = True
     Connection = frmPrincipal.FDConPG
     SQL.Strings = (
-      'SELECT * FROM abastecimento'
+      
+        'select id,status,datareg,idusuario,dataalteracao,idusuarioaltera' +
+        'cao,'
+      
+        'idlocalestoque,idmaquina,idoperador,volumelt,combustivel,dataaba' +
+        'stecimento,hora,'
+      'syncaws,syncfaz,horimetro,idatividade,obs,valorlitro,externo '
+      'from abastecimento a'
       'WHERE syncAws=0')
     Left = 84
     Top = 76

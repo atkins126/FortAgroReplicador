@@ -276,6 +276,7 @@ begin
    mlog.Lines.Add(dmDB.GetGenerico(dmDB.SetorTable));
    mlog.Lines.Add('Baixando Talhoes');
    mlog.Lines.Add(dmDB.GetGenerico(dmDB.TalhoesTable));
+   Application.Terminate;
  end).Start;
 end;
 

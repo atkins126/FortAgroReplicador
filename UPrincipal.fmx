@@ -119,11 +119,9 @@ object frmPrincipal: TfrmPrincipal
   object FDConPG: TFDConnection
     Params.Strings = (
       'Database=FortAgro'
-      'User_Name=dbmasteruser'
+      'User_Name=postgres'
       'Password=!89Ah>k3Wpd+SzQWjiDLU]]5PHu#$-70'
-      
-        'Server=ls-b5a9416631646d3b59e028d836b45022097f4ea8.cpim1c0ocmlf.' +
-        'us-east-1.rds.amazonaws.com'
+      'Server=192.168.236.50'
       'DriverID=PG')
     LoginPrompt = False
     Left = 72
@@ -136,7 +134,6 @@ object frmPrincipal: TfrmPrincipal
     Top = 40
   end
   object PgDriverLink: TFDPhysPgDriverLink
-    VendorLib = 'E:\Projetos2021\Fortaleza\Deploy\libpq.dll'
     Left = 72
     Top = 136
   end
