@@ -203,7 +203,7 @@ object dmPost: TdmPost
       
         ' datapedido,idsolicitante,cancelado,idmaquina,idservico,flagurge' +
         'nte,'#39'1'#39' syncaws,'#39'1'#39' syncfaz,observacao,idcentrocusto,idproprieda' +
-        'de'
+        'de,setor'
       'from pedidocompra'
       'WHERE syncAws=0')
     Left = 676
@@ -236,7 +236,7 @@ object dmPost: TdmPost
       #9#39'1'#39' syncaws,'
       #9#39'1'#39' syncfaz,'
       #9'idmarca,'
-      #9'original '
+      #9'original'
       'from pedidocompraitems  '
       'WHERE syncAws=0')
     Left = 676
